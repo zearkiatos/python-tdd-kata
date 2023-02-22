@@ -3,4 +3,4 @@ class Set:
         self.__set = set
 
     def average(self):
-        return False
+        return None
