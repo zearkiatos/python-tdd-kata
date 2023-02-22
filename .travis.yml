@@ -1,0 +1,14 @@
+language: python
+services:
+  - docker
+python:
+  - '3.9'
+git:
+  depth: 3
+script:
+  - echo 'Run tests 🧪'
+  - make run-tests
+  - echo 'Build docker 🐳'
+  - docker build . -t=python-tdd-kata:travis-build-$TRAVIS_BUILD_NUMBER
+on:
+  branch: develop

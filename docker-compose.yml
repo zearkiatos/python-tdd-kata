@@ -1,0 +1,10 @@
+version: "3.9"
+
+services:
+  kata:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: python-tdd-kata
+    volumes:
+      - ".:/app"
