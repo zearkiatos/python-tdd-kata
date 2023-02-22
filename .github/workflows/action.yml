@@ -1,0 +1,22 @@
+name: Python CI
+
+on: [push]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    environment: 
+      name: staging
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v3
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.9'
+    - name: Generate build number
+      run: echo "The build number $GITHUB_RUN_NUMBER 🏗"
+    - name: Test 🧪
+      run: make run-tests
+    - name: Build docker 🐳
+      run: docker build . -t=python-tdd-kata:github-build-$GITHUB_RUN_NUMBER
