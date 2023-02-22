@@ -3,4 +3,7 @@ class Set:
         self.__set = set
 
     def average(self):
-        return None
+        if len(self.__set) == 1:
+            return (self.__set[0])
+        else:
+            return None
