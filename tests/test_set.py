@@ -11,3 +11,8 @@ class TestSet(unittest.TestCase):
         set = Set([5])
         
         self.assertEqual(set.average(), 5)
+    
+    def test_set_with_two_elements(self):
+        set = Set([5, 7])
+        
+        self.assertEqual(set.average(), 6)
